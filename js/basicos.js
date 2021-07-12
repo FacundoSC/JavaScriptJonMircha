@@ -511,7 +511,7 @@ console.assert(x<y,{x,y,mensaje});
 */
 
 
-console.clear();
+//console.clear();
 
 /** curso de javascript 27. Objeto Date**/
 
@@ -548,4 +548,49 @@ console.log(fecha.toJSON());
 // obtiene la diferencia en minutos de la hora entre  el pais en el que estas y el pais pivot por donde pasa el meridiano de greenwitch (inglaterra)
 console.log(fecha.getTimezoneOffset());
 console.log(fecha.getUTCHours());
+// nos da el tiempo en milisegundos  que pasaron desde  el 1/1/1970
+// esto es muy utilizado para operaciones entre fechas
 console.log(Date.now());
+//moment.js es la libreria utilizada para uso de hora. 
+
+
+/** curso de javascript 28. Objeto Math**/
+
+//permite observar las propiedades del prototipo MATH
+console.warn(Math);
+console.log(Math.PI);
+//metodo para calcular el valor absoluto
+console.log(Math.abs(-5));
+// redondeo para arriba
+console.log(Math.ceil(7.4));
+//redondeo para abajo
+console.log(Math.floor(7.2));
+//redondeo
+console.log(Math.round(7.49));
+//raiz cuadrada
+console.log(Math.sqrt(9));
+//potencia
+console.log(Math.pow(2,5));
+// 1 si es positivo , -1 si es negativo y 0 si no es ni positivo y ni negativo
+console.log(Math.sign(7.49));
+//metodo randon  obtiene un valor aleatorio [0, 1)
+console.log(Math.round(Math.random()*1000));
+
+console.clear();
+// operador cortocircuito por consecuencia de la propiedad de absorcion booleana
+// si un valor  de la derecha es una expresion que tiende a true  es true o sino toma el valor por default.....  todo es true
+                true
+console.log((0)||'defecto'); // true or true toma el de la izquierda
+console.log(null||'defecto'); // false or true toma el otro de la derecha
+console.log(false||'defecto');
+console.log(undefined||'defecto');
+console.log(''||'defecto');
+
+// si un valor es true.....  todo es true
+console.log(false && false);
+console.log(false && true);
+console.log(true && true);
+console.log(true && false);
+
+
+'defecto'
