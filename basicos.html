@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos de JavaScript</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <p>
+          la conclusion final es siempre usar variables let porque son variable
+          de bloque y son un standar
+        </p>
+        <script>
+          console.log("***** uso de var ****");
+          console.log("antes del bloque");
+          var hola = "hola Mundo";
+          let hello = " hello word";
+          console.log(hola);
+          console.log(hello);
+          console.log(window);
+          {
+            console.log("durante el bloque");
+            var hola = " adios";
+            console.log(hola);
+          }
+          console.log("despues del bloque");
+          console.log(hola);
+          console.log("***** uso de let ****");
+          console.log("antes del bloque");
+          let hola2 = "hola Mundo";
+          let hello2 = " hello word";
+          console.log(hola2);
+          console.log(hello2);
+          console.log(window);
+          {
+            console.log("durante el bloque");
+            let hola2 = " adios";
+            console.log(hola2);
+          }
+          console.log("despues del bloque");
+          console.log(hola2);
+
+          let nombre = "Facundo";
+
+          nombre = 19;
+
+          console.log(nombre);
+          const DNI = 35809463;
+          console.log(DNI);
+
+          /**objeto***/
+          const persona = {
+            nombre: "Facundo",
+            apellido: "Cordoba",
+            edad: 30,
+          };
+
+          /** array ***/
+          let colores = ["rojo", "azul"];
+          persona.DNI = DNI;
+          persona.DNI = "358094630";
+          console.log(persona);
+          console.log(colores);
+
+          /**** cadena de caracteres ***/
+          console.log(" cadena de caracteres");
+          console.log(hola2.length, hola2.trim().toUpperCase());
+
+          /**** tipo de datos number (numeros) *****/
+          /**iniciacion**/
+
+          let numero1 = 2;
+          let numero2 = new Number(1);
+          let decimales = 2.5469;
+
+          console.log(
+            ` tipo de dato numero sin constructor es ${numero1} y el tipo de dato numero  con constructor es ${numero2}`
+          );
+          console.log(decimales.toFixed(1)); // disminuye la cantidad de digitos de los decimales
+          console.log(typeof decimales); // typeof me indica la naturaleza del objeto
+          console.log(parseInt(decimales)); // si paso como parametro un decimal al parseint  , obtengo un entero.
+
+          /***** tipo de datos booleanos ***/ parseFloat;
+
+          let verdadero = true;
+          let falso = false;
+          console.log(verdadero, falso);
+          /* tambien puedo  usar constructor para inicializarlo*/
+          verdadero = new Boolean(true);
+          console.log(verdadero.valueOf());
+
+          /*** undefined ,null NaN (not and number) **/
+
+          let primerValor,
+            segundoValor = null,
+            tercerValor = "hola" * 4;
+          console.log(primerValor); //undefined es  una variable declarada pero no inicializada
+          console.log(segundoValor); // null es el no valor que le asigna el programador a una variable.
+          console.log(tercerValor); // Nan not and number es porque se intenta hacer una operacion matematica con dos valores que no son aritmeticos.
+
+
+        </script>
+        <script src="js/basicos.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
