@@ -577,20 +577,38 @@ console.log(Math.sign(7.49));
 console.log(Math.round(Math.random()*1000));
 
 console.clear();
+/*cortocircuito con or toma el valor de la izquierda cuando el valor  tiende a true,
+sino toma el valor  de la derecha en el cual la cadena  no vacia siempre sera true
+*/ 
+function cortoCircuitoOr(nombre){
+   return nombre = nombre || 'desconocido';  
+}
+
+/*cortocircuito con or toma el valor de la izquierda cuando el valor  tiende a true,
+sino toma el valor  de la derecha en el cual la cadena  no vacia siempre sera true
+*/ 
+function cortoCircuitoAnd(nombre){
+  return nombre = (nombre && 'desconocido')? nombre : 'desco';  
+}
+
+console.log(`hola ${cortoCircuitoOr()}`);
+console.log(`hola ${cortoCircuitoOr('facundo')}`);
+
 // operador cortocircuito por consecuencia de la propiedad de absorcion booleana
 // si un valor  de la derecha es una expresion que tiende a true  es true o sino toma el valor por default.....  todo es true
-                true
-console.log((0)||'defecto'); // true or true toma el de la izquierda
+console.log(0||'defecto'); // true or true toma el de la izquierda
 console.log(null||'defecto'); // false or true toma el otro de la derecha
 console.log(false||'defecto');
 console.log(undefined||'defecto');
 console.log(''||'defecto');
 
-// si un valor es true.....  todo es true
-console.log(false && false);
-console.log(false && true);
-console.log(true && true);
-console.log(true && false);
+console.log(!(0) && 'defecto'); // true or true toma el de la izquierda
+console.log(!(null) && 'defecto'); // false or true toma el otro de la derecha
+console.log(!(false) &&'defecto');
+console.log(!(undefined) &&'defecto');
+console.log(!('') && 'defecto');
 
 
-'defecto'
+
+
+
