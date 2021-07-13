@@ -608,7 +608,43 @@ console.log(!(false) &&'defecto');
 console.log(!(undefined) &&'defecto');
 console.log(!('') && 'defecto');
 
+/***** Curso JavaScript: 30. alert, confirm y prompt **/
+
+//console.log(window);
+//alert("esto es una alerta");
+//confirm("este confirm tiene dos boton");
+//prompt("el promt te permite  ingresar valores por teclado");
+
+//console.log(alert("esto es una alerta"));
+//console.log(confirm("este confirm tiene dos boton"))
+//console.log(prompt("el promt te permite  ingresar valores por teclado"));
+
+/** Curso JavaScript: 31 expresione regulares */
+
+/*
+let texto = `lorem  abc es el de lorem`;
+let exprRegV2=  /abc/ig;
+  //ig son las banderas de la expresion regular
+ let expReg = new RegExp('abc','ig');
+
+ console.log(expReg.test(texto));
+ console.log(expReg.exec(texto));
+ 
+ console.log(exprRegV2.test(texto));
+ console.log(exprRegV2.exec(texto));
+*/
+
+ /** Curso JavaScript: 32 funciones  anonimas autoejecutables */
 
 
+ (function(){
+   console.log('mi primera funcion autoejecutable');
+  })();
 
 
+  (function(c, nombre){
+    c.log(` mi nombre es ${nombre}`);
+   })(console, 'facundo');
+ 
+
+   /** Curso JavaScript: 33. Módulos ( import / export ) */

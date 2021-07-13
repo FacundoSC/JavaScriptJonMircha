@@ -1,0 +1,1 @@
+console.log(' mi navegador no soporta ES6');
