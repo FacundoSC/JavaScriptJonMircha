@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevos Tipos de Datos en JavaScript</title>
+  </head>
+  <body>
+    <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+    <script>
+      //Curso JavaScript: 49. Symbols - #jonmircha
+      /* son primitivos como  boolean, number, string
+        los simbolos generalmente se usan como caracteristicas privadas de objetos js ,
+        son privados y unicos. crea una referencia unica , como un objeto.      
+        Aunque los  Symbol tengan la misma descripcion la comparación estricta nos da false
+    */
+      /*
+      const id = Symbol('id');
+      const id2 = Symbol('id2');
+      console.log(id,id2);
+      console.log(typeof id, typeof id2);
+      const NOMBRE = Symbol('nombre');
+      const SALUDAR = Symbol('saludar');
+      const persona = { 
+          [NOMBRE] :"Facundo"
+      }
+      console.log(persona);
+      persona.NOMBRE = "Facundo Sebatian Córdoba";       
+      persona[SALUDAR] = function(){console.log('buen dia');}
+      console.log('inicio del forin');
+      for (const propiedad in persona) {
+        console.log(persona.propiedad);
+      }
+      console.log(persona);
+      console.log(Object.getOwnPropertySymbols(persona));
+      */
+
+      // Curso JavaScript: 50. Sets - #jonmircha
+
+      /* 
+        el tipo de dato set es parecido a un array , pero con la diferencia de que  no permite elementos
+        duplicados, tampoco permite  obtener el elemento por su indice.
+        Existen dos formas de  cargarlos, desde el constructor o usando la funcion add().
+        El metodo size nos da el tamaño del set.
+        Set es un  tipo de dato iterable por eso se puede utilizar for , for of y forEach, pero no se puede  acceder al indice
+        Existe un metodo en el Objeto Array  llamado from  que me permite transformar el set en un arreglo o array convencional.
+     */
+      /*
+     let set1 = new Set([1,2,2,3,true,false,false,{},{},'hola','HOLA']);
+     console.log(set1);
+     console.log(set1.size);
+     let set2 = new Set();
+     set2.add(1);
+     set2.add(2);
+     set2.add(3);
+     set2.add(true);
+     set2.add(false);
+     set2.add(true);
+     set2.add('holis');
+     set2.add('HOLIS');
+     console.log(set2);
+     console.log('mostrar los valores del set1');
+     for (const valor of set1) {
+       console.log(valor);
+       // me muestra un valor indefinido porque la estructura no se puede acceder al indice
+       //console.log(set1[0]);
+     }
+     console.log('mostrar los valores del set2');
+     set2.forEach((valor)=>console.log(valor));
+     // eliminar elemento 
+     set2.delete(1);
+     set2.forEach((valor)=>console.log(valor));
+     // metodo has nos dice si un elemento esta presente en el set , si esta true y sino false.
+     console.log(set2.has(2),set2.has(1));   
+     // transformar un set en un array y obtener el primer elemento
+     console.log(' el primer elemento del set2 es:')
+     console.log(Array.from(set2)[0]);
+     // limpiar todo el tipo de dato set
+     set2.clear();
+     console.log(set2);
+     */
+
+      // Curso JavaScript: 51. Maps - #jonmircha
+
+      /* map es un tipo de dato mas parecido al los  objetos  javascript  y 
+     objetos convensionales como lo dice jon y el tipo de dato set es mas parecido a los array.
+     el tipo de dato se  en si almacena  por cada elemento   una dupla clave (key), valor(value).
+      a diferencia de  un objeto convensional,  map permite asignarle a las key tipos de datos distintos a un string( por el momento no se le encuentra uso)
+    */
+
+      /*
+    let mapa = new Map();
+    mapa.set("nombre","Facu");
+    mapa.set("apellido","cordoba");
+    mapa.set("edad",30);
+    console.log(mapa);
+    console.log(mapa.has("edad"),mapa.has("dni"));
+    console.log(mapa.get("nombre"));
+    mapa.set("nombre","Facundo Sebastian");
+    console.log(mapa.get("nombre"));
+    mapa.delete("edad");
+    console.log(mapa);
+   // utilizo la desectruracion porque se que los objetos mapas tienen elementos key y value como elementos
+    for (const [key,value] of mapa) {
+        console.log(`el clave :${key}  , tiene el  valor:${value}`);
+    }
+  console.log(' segunda forma de instanciar un mapa');
+  const mapa2 = new Map([
+      ["nombre","luna"],
+      ["edad",4],
+      ["raza","dogo"],
+      [null,"nulo"],
+      [false,"false"],
+      [{},{}]
+    ]
+  );
+  console.log('muestro el mapa2')
+  for (const [key,value] of mapa2) {
+        console.log(`el clave :${key}  , tiene el  valor:${value}`);
+    }
+    console.log("****transformar Map en Array");
+    console.log("con Array.from()");
+    console.log(Array.from(mapa2));
+    console.log("con spread operator");
+    console.log([...mapa2]);
+    const vectorValores = [...mapa2.values()]; 
+    const vectorClaves = [...mapa2.keys()];
+    console.log("for of claves");    
+    for (const clave of vectorClaves) {
+        console.log(`la clave:${clave}`);
+    }
+    console.log("forEach valores");    
+     
+    vectorValores.forEach((valor)=>{
+        console.log(`el valor:${valor}`);
+
+    });
+    
+       */ // end 51
+
+      //Curso JavaScript: 52. WeakSets & WeakMaps - #jonmircha
+      /* WeakSet (conjunto debil) y WeakMap( mapa debil) son nuevos tipos de datos.
+    estos tipos de datos  pueden  agregar elementos pero siempre que la referencia sea debil, es decir  objetos
+   weakset solo agrega elementos con el metodo add,  saber si una determinada referencia esta  has y eliminar delete
+   */
+      /*
+      const ws = new WeakSet();
+
+      let valor1 = { valor1: 1 };
+      let valor2 = { valor2: 2 };
+      let valor3 = { valor3: 3 };
+
+      ws.add(valor1);
+      ws.add(valor2);
+
+      console.log(ws);
+
+      console.log(ws.has(valor1));
+      console.log(ws.has(valor3));
+
+      ws.delete(valor2);
+      console.log(ws);
+
+      ws.add(valor2);
+      ws.add(valor3);
+      console.log(ws);
+
+      setInterval(() => console.log(ws), 1000);
+
+      setTimeout(() => {
+        valor1 = null;
+        valor2 = null;
+        valor3 = null;
+      }, 1000);
+
+      /*
+    let wmap = new WeakMap();
+    let llave1 = {};
+    wmap.set(llave1,1);
+    console.log(wmap);
+
+  */
+
+      //Curso JavaScript: 53. Iterables & Iterators - #jonmircha
+
+      /*
+    //const iterable = "Hola Mundo";
+    //const iterable = [1,2,3,6];
+   //const iterable = new Set([1,2,2,3,true,false,false,{},{},'hola','HOLA']);
+   //const iterable = new Map([ ["nombre","luna"], ["edad",4], ["raza","dogo"], [null,"nulo"], [false,"false"],  [{},{}]]); 
+  
+  // en esta linea accedemos al iterador(funcion privada de los objetos iterables) del objeto iterable
+   const iterador = iterable[Symbol.iterator]();
+
+   // console.log(iterable);
+   // console.log(iterador);
+   //console.log(iterador.next());
+
+  let next = iterador.next() ;
+   while(!next.done){
+    console.log(next.value);
+    next = iterador.next();
+   }
+
+   */
+
+      //Curso JavaScript: 54. Generators - #jonmircha
+
+      /*para que la funcion sea generador , tengo que agregar despues
+       *la palabra function el asterico .
+       * la palabra reservada yield es como un return el que me permitira  devolver elementos iteradores al  ambito global
+       */
+
+      /*
+   function* iterable(){
+    yield 'hola';
+    console.log('hola consola');
+    yield 'hola2';
+    console.log("seguimos con mas intrucciones de nuestro codigo");
+    yield 'hola3';
+    yield 'hola4';
+   }
+
+   let iterador = iterable();
+
+   for (const y of iterador) {
+     console.log(`yield ${y}`);
+   }
+   
+
+   let arreglo = [...iterable()];
+   console.log(arreglo);
+   
+
+
+
+   function cuadrado(valor){
+    setTimeout(()=>{
+     // console.log({valor,resultado:valor*valor});
+    },Math.random()*1000);
+
+    return {valor,resultado:valor*valor};
+   }
+
+  function* generador(){
+    console.log('inicioGenerador');
+    yield cuadrado(0);
+    yield cuadrado(1);
+    yield cuadrado(2);
+    console.log('finGenerador');
+
+  }
+let gen = generador();
+let arr = [...generador()];
+let arr2 = Array.from(generador());
+console.log(arr2);
+
+console.log(arr);
+
+for (const y of gen) {
+  console.log(y);
+}
+*/
+
+      //Curso JavaScript: 55. Proxies - #jonmircha
+      // el proxi crea una referencia  bidireccional  con un objeto js
+      // se puede utilizar para valdar campos de un objeto  js original
+      // el proxi no es una copia , es una vinculacion
+
+      /*
+    const persona ={
+      nombre:"",
+      apellido:"",
+      edad:0
+    }
+
+    const persona1 = Object.assign(persona);
+   // el handler sirve para hacer las validaciones 
+   // del objeto proxi sin dañar el objeto js original
+   // validar mediante el metodo set
+    const manejadorHandler ={
+      //obj es el  obj js, y el valor es el que le paso al proxi
+      set(obj,prop,valor){
+        if(Object.keys(obj).indexOf(prop) === -1){
+         return console.error (`la propiedad "${prop}" no forma parte del objeto persona`);
+        }
+        if( (prop === "nombre" || prop === "apellido") && !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü]+$/g.test(valor))){
+         return console.error(`la propiedad "${prop}" solo acepta letras`);
+        }
+        if(prop === "edad" && !(/^[0-9]+$/g.test(valor) )){
+         return console.error(`la propiedad "${prop}" solo acepta numeros`);
+        }
+        (isNaN(valor))?obj[prop] = valor : obj[prop] = Number.parseInt(valor);
+    
+      }
+    }
+
+    const facundo = new Proxy(persona,manejadorHandler);
+
+    facundo.nombre ="Facundo".trim();
+    facundo.apellido="Cordoba ".trim();
+    facundo.edad= "30";
+   console.log(facundo);
+    console.log(persona);
+    console.log('copia');
+    console.log(persona1);
+
+    */
+
+      //Curso JavaScript: 56. Propiedades Dinámicas de los Objetos - #jonmircha
+      // En este video te explico las Propiedades Dinámicas (#CustomProperties) en #JavaScript.
+
+      /*
+
+    const objUser ={};
+    const personas = ["Facundo" ,"Franco" ,"Micaela" ,"Bruno"];
+    console.log(objUser);
+    
+    personas.forEach((valor,indice)=>{
+      objUser[`id${indice}`] = valor;
+    });
+    console.log(objUser);
+
+    */
+
+      //Curso JavaScript: 59. JSON - #jonmirchan
+
+      /*
+      const facundo = {
+        nombre: "Facundo",
+        apellido: "Córdoba",
+        edad: 30,
+        dni: "35.809.463",
+        email: ["cordobafs@gmail.com", "cordobafs@outlook.com"],
+        trabajos: {
+          everis: "qa",
+          practia: "qa",
+          cgcet: "desarrollador full stack",
+        },
+      };
+
+      console.log("*** JSON.parse ***");
+      console.log(JSON.parse("{}"));
+      console.log(JSON.parse("[1,2,3]"));
+      console.log(JSON.parse("true"));
+      console.log(JSON.parse("false"));
+      console.log(JSON.parse("19"));
+      console.log(JSON.parse('"Hola Mundo"'));
+      console.log(JSON.parse("null"));
+      //console.log(JSON.parse("undefined"));
+      console.log(JSON.parse('{ "x": 2, "y": 3 }'));
+
+      console.log("**** JSON.stringify ****");
+      let notacionJson = JSON.stringify(facundo);
+      console.log(notacionJson);
+      console.log("**** JSON.parse ****");
+      console.log(JSON.parse(notacionJson));
+
+      console.log("*** JSON.stringify ***");
+      console.log(JSON.stringify({}));
+      console.log(JSON.stringify([1, 2, 3]));
+      console.log(JSON.stringify(true));
+      console.log(JSON.stringify(false));
+      console.log(JSON.stringify(19));
+      console.log(JSON.stringify("Hola Mundo"));
+      console.log(JSON.stringify(null));
+      console.log(JSON.stringify(undefined));
+      console.log(JSON.stringify({ x: 2, y: 3 }));
+     */
+      // Curso JavaScript: 60. WEB APIs - #jonmircha
+    </script>
+
+    <script src="js/operador_this.js"></script>
+  </body>
+</html>

@@ -1,28 +1,40 @@
+
+
+
+// Curso JavaScript: 10. Funciones - #jonmircha
+
 // Funcion declarada
 
+/*
 function estoEsUnaFuncion() {
   console.log("uno");
   console.log("dos");
   console.log("tres");
-}
+}*/
+
+
 
 // una funcion que devuelve valor
-
+/*
 function estaFuncionDevuelveValor() {
   return "cadena de texto";
 }
-
 estoEsUnaFuncion();
 console.log(estaFuncionDevuelveValor());
+*/
 
-/**funcion con parametros opcionales **/
+
+//funcion con parametros opcionales 
+/*
 function saludar(nombre, edad) {
   console.log(`hola mi nombres es ${nombre} y tengo ${edad} años`);
 }
-
 saludar2();
+*/
 
-/** funcion declarada **/
+
+//funcion declarada 
+/*
 function saludar2(nombre = "alex", edad = 80) {
   console.log(`hola mi nombres es ${nombre} y tengo ${edad} años`);
 }
@@ -40,9 +52,12 @@ const funcionExpresada = function () {
 };
 
 funcionExpresada();
+ */
 
-/** arreglos en js**/
 
+//Curso JavaScript: 11. Arreglos (Arrays)
+        
+/*
 const a = [];
 const b = [1, true, "hola", ["A", "B", "C"]];
 console.log(a);
@@ -50,12 +65,17 @@ console.log(b);
 console.log(b.length);
 
 console.log(b[3][2]);
+*/
 
-/** otra forma de  crear un Array usando el constructor**/
+// otra forma de  crear un Array usando el constructor
+/*
 const c = Array.of("holis", 4, 5, true);
 console.log(c);
+*/
 
-/** array que inicializa todo con false */
+//array que inicializa todo con false 
+
+/*
 const d = Array(100).fill(false);
 console.log(d);
 
@@ -73,8 +93,16 @@ colo.forEach(function (elemento, index) {
   console.log(elemento, index);
 });
 
+*/
+
+
+//Curso JavaScript: 12. Objetos 
+        
+
 /* a las variables dentro de los objetos se los llama atributos
  y a las funciones dentro de los objetos se los llama metodos */
+
+ /*
 const facundo = {
   nombre: "facundo",
   apellido: "cordoba",
@@ -91,9 +119,7 @@ const facundo = {
     console.log(` hola :) mi nombre es ${this.nombre} ${this.apellido}`);
   },
 };
-
 facundo.saludar();
-
 console.log(facundo.nombre, facundo["nombre"]);
 console.log(facundo.pasatiempos[0]);
 console.log(facundo.contacto.facebook);
@@ -101,9 +127,11 @@ console.log(facundo.contacto.facebook);
 console.log(Object.keys(facundo)); // me arroja las claves de un objeto
 console.log(Object.values(facundo)); // me arroja los valores del objeto
 console.log(facundo.hasOwnProperty("nombre")); // me dice si tiene un determinada propiedad
+*/
 
-/* curso de javascript 16.  manejo de errores try catch y finally */
-
+ //Curso JavaScript: 12. Objetos - manejo de errores try catch y finally
+        
+/*
 try {
   console.log(`el try agrega el codigo que se va a evaluar`);
   // noExiste;
@@ -128,11 +156,14 @@ try {
 } catch (error) {
   console.log(`se produjo el siguiente error ${error}`);
 }
+*/
 
-/* curso de javascript 17. break y continue */
+
+//Curso JavaScript: 17. break & continue - #jonmircha
 
 /* break y continue son palabras que pueden ser utilizadas solamente en estructas if, while, do while for */
 
+/*
 const numeros = [1, 2, 3, 4, 5, 6, 7];
 
 for (let index = 0; index < numeros.length; index++) {
@@ -166,9 +197,12 @@ for (let j = 0; j < numeros.length; j++) {
   }
   console.log(numeros[j]);
 }
+*/
 
-/* curso de javascript 18. destructuracion */
 
+
+//Curso JavaScript: 18. Destructuración - #jonmircha
+  
 let numerosPrimos = [1, 3, 5];
 
 /* sin destructuracion */
@@ -577,10 +611,14 @@ console.log(Math.sign(7.49));
 console.log(Math.round(Math.random()*1000));
 
 console.clear();
+
+   /** Curso JavaScript: 29 operador cortocircuito */
+
 /*cortocircuito con or toma el valor de la izquierda cuando el valor  tiende a true,
 sino toma el valor  de la derecha en el cual la cadena  no vacia siempre sera true
 */ 
 function cortoCircuitoOr(nombre){
+  
    return nombre = nombre || 'desconocido';  
 }
 
@@ -594,6 +632,7 @@ function cortoCircuitoAnd(nombre){
 console.log(`hola ${cortoCircuitoOr()}`);
 console.log(`hola ${cortoCircuitoOr('facundo')}`);
 
+   
 // operador cortocircuito por consecuencia de la propiedad de absorcion booleana
 // si un valor  de la derecha es una expresion que tiende a true  es true o sino toma el valor por default.....  todo es true
 console.log(0||'defecto'); // true or true toma el de la izquierda
@@ -619,20 +658,20 @@ console.log(!('') && 'defecto');
 //console.log(confirm("este confirm tiene dos boton"))
 //console.log(prompt("el promt te permite  ingresar valores por teclado"));
 
-/** Curso JavaScript: 31 expresione regulares */
+/** Curso JavaScript: 31 expresiones regulares **/
 
-/*
+
 let texto = `lorem  abc es el de lorem`;
-let exprRegV2=  /abc/ig;
+let exprRegV2=  /lorem/ig;
   //ig son las banderas de la expresion regular
- let expReg = new RegExp('abc','ig');
+ let expReg = new RegExp('lorem','ig');
 
  console.log(expReg.test(texto));
  console.log(expReg.exec(texto));
  
  console.log(exprRegV2.test(texto));
  console.log(exprRegV2.exec(texto));
-*/
+
 
  /** Curso JavaScript: 32 funciones  anonimas autoejecutables */
 
